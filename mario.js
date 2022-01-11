@@ -1,36 +1,23 @@
-const coloredStyles = {
-    width: "25px",
-    height: "25px",
-    margin: "3px",
-    backgroundColor: "brown",
-    display: "inline-block",
-}
-
-const blankStyles = { ...coloredStyles, backgroundColor: "lightblue" };
-
 
 function jGeneratePyramidLine(row, height) { 
-    let lineDiv = $("<div></div>");
-
+    const lineDiv = $("<div></div>");
     for (var i = 1; i <= height - row; ++i){
-        $("<div></div>").css(blankStyles).addClass("brickunvisible").appendTo(lineDiv);
+        lineDiv.append($("<div></div>").addClass("brick unvisible"));
     }
     for (; i <= height + 1; ++i){
-        $("<div></div>").css(coloredStyles).addClass("brickvisible").appendTo(lineDiv);
-    }
-       
-
+        lineDiv.append($("<div></div>").addClass("brick visible"));
+    }  
     return lineDiv;
 }
 
-function printPyramid(element, height) {
+function jPrintPyramid(element, height) {
     element.html("");
     for (let i = 1; i <= height; ++i) {
         element.append(jGeneratePyramidLine(i, height));
     }
 }
 
-printPyramid( $("#construction"), 15);
+jPrintPyramid( $("#construction"), 15);
 
 function random(number) {
   return Math.floor(Math.random() * (number+1));
@@ -38,5 +25,5 @@ function random(number) {
 
 $( "button" ).on( "click" ,function() {
   const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-  $( '.brickvisible').css( "background-color", rndCol )
+  $( '.visible').css( "background-color", rndCol )
 })
