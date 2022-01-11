@@ -1,0 +1,23 @@
+
+
+#pyramid {
+    font-family: "Courier New", monospace;
+    line-height: 0;
+  }
+
+.brick {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    display: inline-block;
+} 
+
+.unvisible {
+    background-color: brown;
+} 
+
+.visible {
+    background-color: lightblue;
+} 
+
+
