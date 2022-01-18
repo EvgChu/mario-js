@@ -13,11 +13,14 @@
 } 
 
 .unvisible {
-    background-color: brown;
-} 
-
-.visible {
     background-color: lightblue;
 } 
 
+.visible {
+    background-color: brown;
+} 
+
+.mario {
+    background-color: black;
+} 
 
